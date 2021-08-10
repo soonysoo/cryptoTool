@@ -43,7 +43,7 @@ export default function MenuBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h5" noWrap>
-            Material-UI
+            CTI Encrypt Decrypt Tool
           </Typography>
           <IconButton aria-label="search" color="inherit">
             <SearchIcon />
