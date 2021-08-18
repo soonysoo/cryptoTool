@@ -16,9 +16,9 @@ export default function LogCryptoTitle() {
   
     return (
       <div className={classes.root}>
-        <Typography variant="h4"  gutterBottom>
+        {/* <Typography variant="h4"  gutterBottom>
           전체로그 복호화
-        </Typography>
+        </Typography> */}
       </div>
   );
 }

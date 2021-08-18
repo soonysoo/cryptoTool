@@ -23,7 +23,7 @@ export default function DecryptLogView() {
 
   return (
     <div className={classes.root}>
-      <input
+      {/* <input
         accept="image/*"
         className={classes.input}
         id="contained-button-file"
@@ -44,7 +44,7 @@ export default function DecryptLogView() {
         defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua."
         />
-        </div>
+        </div> */}
     </div>
   );
 }
