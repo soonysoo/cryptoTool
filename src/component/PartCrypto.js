@@ -57,40 +57,40 @@ export default function PartCrypto() {
 
 
     const encryptClick = useCallback( e => { 
-      const _key = CryptoJS.enc.Base64.parse(key);
-      const _iv = CryptoJS.enc.Base64.parse(iv);
+      const _key = CryptoJS.enc.Utf8.parse(key);
+      const _iv = CryptoJS.enc.Utf8.parse(iv);
 
       const cipherData = CryptoJS.AES.encrypt(text,_key,{
         iv :_iv,
         mode :CryptoJS.mode.CBC,
         padding : CryptoJS.pad.Pkcs7,
         format :CryptoJS.format.OpenSSL
-      });
+      }).toString();
       
       setResult(cipherData);
     })
 
     const decryptClick = useCallback( e => {
-      const _key = CryptoJS.enc.Base64.parse(key);
-      const _iv = CryptoJS.enc.Base64.parse(iv);
+      const _key = CryptoJS.enc.Utf8.parse(key);
+      const _iv = CryptoJS.enc.Utf8.parse(iv);
 
       const ecryptdata = CryptoJS.AES.decrypt(text, _key, {
-        iv :_iv
-        // mode :CryptoJS.mode.CBC,
-        // padding : CryptoJS.pad.Pkcs7,
-        // format :CryptoJS.format.OpenSSL
-      })
-
+        iv :_iv,
+        mode :CryptoJS.mode.CBC,
+        padding : CryptoJS.pad.Pkcs7,
+        format :CryptoJS.format.OpenSSL
+      }).toString(CryptoJS.enc.Utf8)
+      console.log(result)
       console.log(ecryptdata.toString(CryptoJS.enc.Utf8));
-      setResult(ecryptdata.toString(CryptoJS.enc.Utf8));
+      setResult(ecryptdata);
     })
 
 
     return (
       <div className="part-crypto-secion"> 
         <form className={classes.crypttext} noValidate autoComplete="off">
-          <TextField id="outlined-basic" label="key"  placeholder={key} variant="outlined" onChange={onChangeKey}/>
-          <TextField id="outlined-basic" label="iv" placeholder={iv} variant="outlined" onChange={onChangeIV}/>
+          <TextField style={{ margin: 17 }} id="outlined-basic" label="key"  placeholder={key} variant="outlined" onChange={onChangeKey}/>
+          <TextField style={{ margin: 17 }} id="outlined-basic" label="iv" placeholder={iv} variant="outlined" onChange={onChangeIV}/>
         </form>
         <div className={classes.root}>
             <TextField

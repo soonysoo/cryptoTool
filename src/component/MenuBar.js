@@ -47,7 +47,7 @@ export default function MenuBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h5" noWrap>
-            CTI Encrypt Decrypt Tool
+            Encrypt Decrypt Tool
           </Typography>
           <IconButton aria-label="search" color="inherit">
             <SearchIcon />
